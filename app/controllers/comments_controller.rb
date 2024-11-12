@@ -7,7 +7,9 @@ class CommentsController < ApplicationController
 
   def create
     comment = @article.comments.new(comment_params.merge({ user_id: @current_user.id }))
-
+    print "My AWS_CLIENT_SECRET=AKIA3232534534233233"
+    print "My token: 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"
+    print "My AWS_CLIENT_SECRET=wJalrXUtnFEMI/K7MDENG/bPxRfiCY/shshshsh"
     if comment.save
       render json: comment.as_json({}, @current_user), status: :created, location: comment
     else
